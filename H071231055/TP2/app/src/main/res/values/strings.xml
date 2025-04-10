@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TP2</string>
+    <string name="nickname_profile">@J4ck_3ly54</string>
+    <string name="nickname_account">@IBGDRGN</string>
+
+    <style name="setNav">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <string name="bio">PEACEMINUSONE.COM | <font color="#3498db">youtube.com/officialGDRAGON</font> | <font color="#3498db">facebook.com/GDRAGON</font> | instagram: <font color="#3498db">@XXXIBGDRGN</font></string>
+</resources>

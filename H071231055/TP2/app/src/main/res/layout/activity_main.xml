@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <!-- Sidebar -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/black"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/white"
+        app:itemTextAppearance="@style/setNav"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/nav_menu"
+        app:itemShapeFillColor="@color/black"
+        tools:ignore="MissingConstraints">
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="120dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="2dp"
+                android:background="#333333" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="40dp">
+
+                <TextView
+                    android:id="@+id/tv_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Settings &amp; Support"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/icon_settings_dropdown"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:paddingBottom="6dp"
+                    android:src="@drawable/setting" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/pesannn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/setting_theme" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="9dp"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!--Tab Sidebar-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp">
+
+                    <FrameLayout
+                        android:id="@+id/f2"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:background="@drawable/lingkaran"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/fotoprofil_beranda"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/lingkaran"
+                            android:clipToOutline="true"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Logo -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/logo" />
+                </LinearLayout>
+
+                <!-- Tab Settings -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dp">
+
+                    <!-- Tab Upgrade -->
+                    <TextView
+                        android:id="@+id/tab_upgrade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="1dp"
+                        android:text="Upgrade"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Tab Menu -->
+                    <ImageView
+                        android:id="@+id/tab_menu"
+                        android:layout_width="31dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/menu2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Layout untuk Tab -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <!-- Tab For you -->
+                        <TextView
+                            android:id="@+id/tab_foryou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:text="For you"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="170dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/garis" />
+                    </LinearLayout>
+
+                    <!-- Tab Following -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tab_following"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:text="Following"
+                            android:textColor="#71767b"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="56dp"
+                            android:layout_height="4dp"
+                            android:background="@android:color/transparent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#333333" />
+            </LinearLayout>
+
+            <!-- Postingan Tweet -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="50dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Tombol Tambah -->
+        <ImageView
+            android:id="@+id/tambah"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:paddingTop="25dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tambah"
+            app:layout_constraintBottom_toTopOf="@id/bar"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Layout untuk Taskbar -->
+        <LinearLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:weightSum="6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!--Tab Beranda-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/beranda"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/beranda" />
+            </LinearLayout>
+
+            <!--Tab Search-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/telusurii" />
+            </LinearLayout>
+
+            <!--Tab Grok-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/grok"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:src="@drawable/grokk" />
+            </LinearLayout>
+
+            <!--Tab Sharing-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/sharing"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/sharing" />
+            </LinearLayout>
+
+            <!--Tab Notifikasi-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/notifikasi"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/notifikasi" />
+            </LinearLayout>
+
+            <!--Tab Pesan-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="1dp">
+
+                <ImageView
+                    android:id="@+id/pesan"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/pesann" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

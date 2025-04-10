@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:strokeColor="#333333"
+    app:strokeWidth="0.3dp">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black">
+
+            <!-- Sampul -->
+            <ImageView
+                android:id="@+id/sampul_profil"
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop" />
+
+            <!-- Foto Profil -->
+            <FrameLayout
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_alignBottom="@id/sampul_profil"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="-48dp"
+                android:background="@drawable/lingkaran"
+                android:elevation="8dp"
+                android:scaleType="centerCrop">
+
+                <FrameLayout
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:background="@drawable/lingkaran"
+                    android:padding="3.5dp">
+
+                    <ImageView
+                        android:id="@+id/foto_profil"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lingkaran"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Layout untuk Tombol -->
+            <LinearLayout
+                android:id="@+id/button_container"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sampul_profil"
+                android:layout_marginTop="5dp"
+                android:gravity="end"
+                android:orientation="horizontal"
+                android:paddingEnd="15dp">
+
+                <!-- Tombol Follow -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Follow"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Layout untuk Data Umum -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Username -->
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Icon Verified -->
+                <ImageView
+                    android:id="@+id/icon_verified"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="4dp"
+                    android:contentDescription="Verified Badge"
+                    android:src="@drawable/centangbiru" />
+            </LinearLayout>
+
+            <!-- Nickname -->
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#71767b"
+                android:textSize="16sp" />
+
+            <!-- Bio -->
+            <TextView
+                android:id="@+id/tv_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:minLines="2"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

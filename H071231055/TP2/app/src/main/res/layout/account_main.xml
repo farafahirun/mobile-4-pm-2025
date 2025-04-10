@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:orientation="vertical">
+
+            <!--            Layout untuk Sampul & Foto Profil-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black">
+
+                <!-- Sampul -->
+                <ImageView
+                    android:id="@+id/headerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sampul" />
+
+                <!-- Foto Profil -->
+                <FrameLayout
+                    android:id="@+id/f3"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_alignBottom="@id/headerImage"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="-48dp"
+                    android:background="@drawable/lingkaran"
+                    android:elevation="8dp"
+                    android:scaleType="centerCrop">
+
+                    <FrameLayout
+                        android:id="@+id/f2"
+                        android:layout_width="78dp"
+                        android:layout_height="78dp"
+                        android:background="@drawable/lingkaran"
+                        android:padding="3.5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/lingkaran"
+                            android:clipToOutline="true"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/fotoprofil" />
+                    </FrameLayout>
+                </FrameLayout>
+
+                <!-- Layout untuk tombol -->
+                <LinearLayout
+                    android:id="@+id/button_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/headerImage"
+                    android:layout_marginTop="10dp"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:paddingEnd="15dp">
+
+                    <!-- Tombol Pesan -->
+                    <ImageButton
+                        android:id="@+id/btn_message"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/pesan" />
+
+                    <!-- Tombol Follow -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_follow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/white"
+                        android:text="Follow"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Layout untuk Data Umum -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="6dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp">
+
+                <!-- Username dan Verified -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Username -->
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="G-DRAGON"
+                        android:textColor="#FFFFFF"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <!-- Icon Verified -->
+                    <ImageView
+                        android:id="@+id/icon_verified"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="4dp"
+                        android:contentDescription="Verified Badge"
+                        android:src="@drawable/centangbiru" />
+                </LinearLayout>
+
+                <!-- Nickname -->
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nickname_account"
+                    android:textColor="#71767b"
+                    android:textSize="20sp" />
+
+                <!-- Bio -->
+                <TextView
+                    android:id="@+id/tv_bio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/bio"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!-- Layout untuk Data Private -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:orientation="vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Lokasi -->
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="lokasi"
+                        android:src="@drawable/lokasi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="20dp"
+                        android:text="MADEINKOREA"
+                        android:textColor="#71767b"
+                        android:textSize="20sp" />
+
+                    <!-- Tanggal Lahir -->
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="tanggal_lahir"
+                        android:src="@drawable/balon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Born 18 Agustus 1988"
+                        android:textColor="#71767b"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <!-- Bergabung -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="bergabung"
+                        android:src="@drawable/kalender" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Joined Juli 2012"
+                        android:textColor="#71767b"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <!-- Mengikuti & Pengikut -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <!-- Mengikuti -->
+                    <TextView
+                        android:id="@+id/tv_following"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 0"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text=" Following"
+                        android:textColor="#71767b"
+                        android:textSize="18sp" />
+
+                    <!-- Pengikut -->
+                    <TextView
+                        android:id="@+id/tv_followers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 8.256.087"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Followers"
+                        android:textColor="#71767b"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Tidak Diikuti Oleh Siapapun -->
+                <TextView
+                    android:id="@+id/tv_not_followed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not followed by anyone you're following"
+                    android:textColor="#71767b"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Layout untuk Tab -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:orientation="vertical"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Tab Posts -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tab_postingan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:text="Posts"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="56dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/garis" />
+                    </LinearLayout>
+
+                    <!-- Tab Replies -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tab_balasan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:text="Replies"
+                            android:textColor="#A6A6A6"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="56dp"
+                            android:layout_height="4dp"
+                            android:background="@android:color/transparent" />
+                    </LinearLayout>
+
+                    <!-- Tab Media -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tab_media"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:text="Media"
+                            android:textColor="#A6A6A6"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="56dp"
+                            android:layout_height="4dp"
+                            android:background="@android:color/transparent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#333333" />
+
+                <!-- Pin Disematkan -->
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="16dp"-->
+                <!--                    android:layout_marginTop="12dp"-->
+                <!--                    android:gravity="center_vertical"-->
+                <!--                    android:orientation="horizontal">-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginEnd="4dp"-->
+                <!--                        android:paddingLeft="20dp"-->
+                <!--                        android:textColor="#FFFFFF"-->
+                <!--                        android:textSize="14sp"-->
+                <!--                        android:textStyle="bold" />-->
+
+                <!--                    <ImageView-->
+                <!--                        android:layout_width="17dp"-->
+                <!--                        android:layout_height="17dp"-->
+                <!--                        android:layout_marginEnd="8dp"-->
+                <!--                        android:contentDescription="Disematkan"-->
+                <!--                        android:src="@drawable/pin" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:text="Pinned"-->
+                <!--                        android:textColor="#A6A6A6"-->
+                <!--                        android:textSize="15sp"-->
+                <!--                        android:textStyle="bold" />-->
+                <!--                </LinearLayout>-->
+            </LinearLayout>
+
+            <!-- Postingan Tweet -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Layout untuk Tombol -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="1"
+        tools:ignore="MissingConstraints">
+
+        <!-- Kiri -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start">
+
+            <!-- Kembali ke activity_main -->
+            <ImageView
+                android:id="@+id/kembali"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="3dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/kembali" />
+        </LinearLayout>
+
+        <!-- Kanan -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+            <!-- Grok -->
+            <ImageView
+                android:id="@+id/grok"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="3dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/grok" />
+
+            <!-- Telusuri -->
+            <ImageView
+                android:id="@+id/telusuri"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="3dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/telusuri" />
+
+            <!-- Menu -->
+            <ImageView
+                android:id="@+id/menuP"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="3dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/menu2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Tombol Tambah -->
+    <ImageView
+        android:id="@+id/tambah"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tambah"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
