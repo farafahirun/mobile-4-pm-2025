@@ -1,7 +1,6 @@
 package com.example.tp2;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -30,15 +29,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     FrameLayout f2;
 
+    // Variabel untuk menyimpan data sementara
+    public static String currentName = "No Name";
+    public static Uri currentProfileImageUri = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_menu);
-        NavigationView navigationView = findViewById(R.id.nav_menu);
         View headerView = navigationView.getHeaderView(0);
 
         navigationView.bringToFront();
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra("name", currentName);
+                if (currentProfileImageUri != null) {
+                    intent.putExtra("profileImage", currentProfileImageUri.toString());
+                }
                 startActivity(intent);
             }
         });
@@ -71,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra("name", currentName);
+                if (currentProfileImageUri != null) {
+                    intent.putExtra("profileImage", currentProfileImageUri.toString());
+                }
                 startActivity(intent);
             }
         });
@@ -80,6 +89,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra("name", currentName);
+                if (currentProfileImageUri != null) {
+                    intent.putExtra("profileImage", currentProfileImageUri.toString());
+                }
                 startActivity(intent);
             }
         });
@@ -139,6 +152,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.nav_profile) {
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            intent.putExtra("name", currentName);
+            if (currentProfileImageUri != null) {
+                intent.putExtra("profileImage", currentProfileImageUri.toString());
+            }
             startActivity(intent);
         }
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -153,23 +170,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View headerView = navigationView.getHeaderView(0);
         TextView profileName = headerView.findViewById(R.id.username_head);
         ImageView profileImage = headerView.findViewById(R.id.fotoprofil);
+        ImageView imgProfile = findViewById(R.id.fotoprofil_beranda);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("UserProfile", MODE_PRIVATE);
-        String name = sharedPreferences.getString("name", "No Name");
-        String profileImagePath = sharedPreferences.getString("profileImage", null);
+        profileName.setText(currentName);
 
-        profileName.setText(name);
-
-        if (profileImagePath != null) {
-            profileImage.setImageURI(Uri.parse(profileImagePath));
+        if (currentProfileImageUri != null) {
+            profileImage.setImageURI(currentProfileImageUri);
+            imgProfile.setImageURI(currentProfileImageUri);
         } else {
             profileImage.setImageResource(R.drawable.fotoprofil);
-        }
-
-        ImageView imgProfile = findViewById(R.id.fotoprofil_beranda);
-        if (profileImagePath != null) {
-            imgProfile.setImageURI(Uri.parse(profileImagePath));
-        } else {
             imgProfile.setImageResource(R.drawable.fotoprofil);
         }
     }

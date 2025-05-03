@@ -45,7 +45,6 @@ public class ProfilAdapter extends RecyclerView.Adapter<ProfilAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvUsername, tvHandle, tvBio;
         ImageView imgProfile, imgHeader;
-        MaterialButton btnFollow;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
