@@ -43,47 +43,47 @@
             android:textColor="@color/penulis"
             android:textSize="16sp" />
 
-        <LinearLayout
-            android:id="@+id/layout_rating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/layout_rating"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="end"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:orientation="horizontal">-->
 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/star_select"
-                android:layout_marginRight="3.5dp"
-                app:tint="@color/judul" />
+<!--            <ImageView-->
+<!--                android:layout_width="14dp"-->
+<!--                android:layout_height="14dp"-->
+<!--                android:src="@drawable/star_select"-->
+<!--                android:layout_marginRight="3.5dp"-->
+<!--                app:tint="@color/judul" />-->
 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/star_select"
-                android:layout_marginRight="3.5dp"
-                app:tint="@color/judul" />
+<!--            <ImageView-->
+<!--                android:layout_width="14dp"-->
+<!--                android:layout_height="14dp"-->
+<!--                android:src="@drawable/star_select"-->
+<!--                android:layout_marginRight="3.5dp"-->
+<!--                app:tint="@color/judul" />-->
 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/star_select"
-                android:layout_marginRight="3.5dp"
-                app:tint="@color/judul" />
+<!--            <ImageView-->
+<!--                android:layout_width="14dp"-->
+<!--                android:layout_height="14dp"-->
+<!--                android:src="@drawable/star_select"-->
+<!--                android:layout_marginRight="3.5dp"-->
+<!--                app:tint="@color/judul" />-->
 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/star_select"
-                android:layout_marginRight="3.5dp"
-                app:tint="@color/judul" />
+<!--            <ImageView-->
+<!--                android:layout_width="14dp"-->
+<!--                android:layout_height="14dp"-->
+<!--                android:src="@drawable/star_select"-->
+<!--                android:layout_marginRight="3.5dp"-->
+<!--                app:tint="@color/judul" />-->
 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/star_select"
-                app:tint="@color/judul" />
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:layout_width="14dp"-->
+<!--                android:layout_height="14dp"-->
+<!--                android:src="@drawable/star_select"-->
+<!--                app:tint="@color/judul" />-->
+<!--        </LinearLayout>-->
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

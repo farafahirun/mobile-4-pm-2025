@@ -1,6 +1,5 @@
 package com.example.tp4.Adapter;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

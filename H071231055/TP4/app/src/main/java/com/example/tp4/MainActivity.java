@@ -59,5 +59,4 @@ public class MainActivity extends AppCompatActivity {
     public void showBottomNav() {
         findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
     }
-
 }

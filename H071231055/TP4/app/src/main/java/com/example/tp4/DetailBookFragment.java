@@ -47,7 +47,6 @@ public class DetailBookFragment extends Fragment {
                 binding.cover.setImageResource(coverDrawable);
             }
 
-            // Set detail lainnya
             binding.judul.setText(book.getJudul());
             binding.penulis.setText(book.getPenulis());
             binding.sinopsis.setText(book.getSinopsis());

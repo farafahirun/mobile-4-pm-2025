@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 public class Book implements Parcelable {
     private int cover; // Untuk drawable
     private Uri coverUri;      // Untuk gambar dari galeri
-
     private String judul;
     private String penulis;
     private String penerbit;
